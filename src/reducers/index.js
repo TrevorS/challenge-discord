@@ -8,13 +8,7 @@ import {
 } from '../actions';
 
 const initialState = {
-  tabs: [
-    { text: '0' },
-    { text: '1' },
-    { text: '2' },
-    { text: '3' },
-    { text: '4' },
-  ],
+  tabs: [],
   selectedTab: 0,
   modalOpen: false,
 };

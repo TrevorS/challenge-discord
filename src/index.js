@@ -7,10 +7,23 @@ import registerServiceWorker from './registerServiceWorker';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
-
 import reducer from './reducers';
 
-const store = createStore(reducer);
+const getInitialState = () => {
+  const item = localStorage.getItem('tabsChallenge');
+
+  if (item) {
+    return JSON.parse(item);
+  }
+
+  return undefined;
+}
+
+const store = createStore(reducer, getInitialState());
+
+store.subscribe(() => {
+  localStorage.setItem('tabsChallenge', JSON.stringify(store.getState()));
+});
 
 const Challenge = () => (
   <Provider store={store}>
