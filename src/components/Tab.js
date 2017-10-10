@@ -5,9 +5,7 @@ class Tab extends Component {
     super(props);
 
     const index = this.props.selectedTab;
-    const tab = this.props.tabs[index];
-
-    const text = this.props.tabs[index] && this.props.tabs[index].text || '';
+    const text = (this.props.tabs[index] && this.props.tabs[index].text) || '';
 
     this.state = {
       text,

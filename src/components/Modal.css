@@ -4,6 +4,11 @@
   width: 60%;
   margin: auto;
   border: 1px solid black;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
 }
 
 .Modal-tabs {
