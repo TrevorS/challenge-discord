@@ -18,7 +18,7 @@ class Tab extends Component {
     const index = newProps.selectedTab;
     const tab = newProps.tabs[index] || newProps.tabs[0];
 
-    const text = tab.text || '';
+    const text = (tab && tab.text) || '';
 
     if (text !== this.state.text) {
       this.setState({ text });
