@@ -1,4 +1,4 @@
-import { newTab, selectTab, deleteTab, NEW_TAB, SELECT_TAB, DELETE_TAB } from '../actions';
+import { NEW_TAB, SELECT_TAB, EDIT_TAB, DELETE_TAB } from '../actions';
 
 const initialState = {
   tabs: [
@@ -13,6 +13,14 @@ const initialState = {
 
 const removeTab = (tabs, index) =>
   tabs.filter((tab, i) => i !== index);
+
+const editTab = (tabs, index, text) => {
+  const newTabs = tabs.slice();
+
+  newTabs[index].text = text;
+
+  return newTabs;
+}
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
@@ -30,6 +38,12 @@ const reducer = (state = initialState, action) => {
         ...state,
         selectedTab: action.index,
       }
+
+    case EDIT_TAB:
+      return {
+        ...state,
+        tabs: editTab(state.tabs, state.selectedTab, action.text)
+      };
 
     case DELETE_TAB:
       return {

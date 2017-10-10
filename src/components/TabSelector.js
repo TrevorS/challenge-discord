@@ -1,17 +1,17 @@
 import React from 'react';
 
-const TabSelector = ({ tabs, onClick, onClickDelete }) => (
+const TabSelector = ({ tabs, selectTab, deleteTab }) => (
   <div className="TabSelector">
     <ul>
       {tabs.map((tab, i) =>
-        <li key={tab.text} onClick={() => onClick(i)}>
-          <span onClick={() => onClick(i)}>
+        <li key={`${i}-${tab.text}`}>
+          <span onClick={() => selectTab(i)}>
             {i}
           </span>
 
           -
 
-          <span onClick={() => onClickDelete(i)}>
+          <span onClick={() => deleteTab(i)}>
             X
           </span>
         </li>
