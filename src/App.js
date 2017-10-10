@@ -1,14 +1,12 @@
 import React from 'react';
 import './App.css';
 
-import StartButton from './components/StartButton';
-
+import StartButtonContainer from './containers/StartButtonContainer';
 import ModalContainer from './containers/ModalContainer';
 
 const App = () => (
   <div className="App">
-    <StartButton />
-
+    <StartButtonContainer />
     <ModalContainer />
   </div>
 );

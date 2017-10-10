@@ -1,0 +1,32 @@
+.Modal {
+  background: lightgray;
+  height: 80%;
+  width: 60%;
+  margin: auto;
+  border: 1px solid black;
+}
+
+.Modal-tabs {
+  display: flex;
+  flex-direction: row;
+  height: 90%;
+  padding: 10px;
+}
+
+.Modal-tabs .TabSelector {
+  width: 20%;
+}
+
+.Modal-tabs .Tab {
+  padding-left: 5px;
+  width: 80%;
+}
+
+.Modal-tabs .Tab textarea {
+  height: 100%;
+  width: 95%;
+}
+
+.Modal button {
+  margin-left: 10px;
+}

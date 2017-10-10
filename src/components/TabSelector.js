@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './TabSelector.css';
+
 const TabSelector = ({ tabs, selectTab, deleteTab }) => (
   <div className="TabSelector">
     <ul>
@@ -9,10 +11,10 @@ const TabSelector = ({ tabs, selectTab, deleteTab }) => (
             {i}
           </span>
 
-          -
+          &nbsp;-&nbsp;
 
-          <span onClick={() => deleteTab(i)}>
-            X
+          <span className="TabSelector-X" onClick={() => deleteTab(i)}>
+            Delete
           </span>
         </li>
       )}

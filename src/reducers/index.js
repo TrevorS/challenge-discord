@@ -1,4 +1,11 @@
-import { NEW_TAB, SELECT_TAB, EDIT_TAB, DELETE_TAB } from '../actions';
+import {
+  OPEN_MODAL,
+  CLOSE_MODAL,
+  NEW_TAB,
+  SELECT_TAB,
+  EDIT_TAB,
+  DELETE_TAB
+} from '../actions';
 
 const initialState = {
   tabs: [
@@ -9,6 +16,7 @@ const initialState = {
     { text: '4' },
   ],
   selectedTab: 0,
+  modalOpen: false,
 };
 
 const removeTab = (tabs, index) =>
@@ -24,6 +32,18 @@ const editTab = (tabs, index, text) => {
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
+    case OPEN_MODAL:
+      return {
+        ...state,
+        modalOpen: true,
+      };
+
+    case CLOSE_MODAL:
+      return {
+        ...state,
+        modalOpen: false,
+      };
+
     case NEW_TAB:
       return {
         ...state,

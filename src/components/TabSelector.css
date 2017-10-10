@@ -1,0 +1,14 @@
+.TabSelector ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.TabSelector li {
+  border: 1px solid black;
+  padding: 0 0 10px 5px;
+}
+
+.TabSelector .TabSelector-X {
+  color: red;
+}

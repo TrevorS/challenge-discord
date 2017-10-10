@@ -16,7 +16,9 @@ class Tab extends Component {
 
   componentWillReceiveProps(newProps) {
     const index = newProps.selectedTab;
-    const text = newProps.tabs[index].text;
+    const tab = newProps.tabs[index] || newProps.tabs[0];
+
+    const text = tab.text;
 
     if (text !== this.state.text) {
       this.setState({ text });
